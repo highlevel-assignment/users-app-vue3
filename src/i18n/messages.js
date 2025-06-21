@@ -5,7 +5,8 @@ export default {
       email: 'Email',
       gender: 'Gender',
       name: 'Name',
-      action: 'Action'
+      action: 'Action',
+      edit: 'Edit'
     }
   }
 }

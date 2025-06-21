@@ -3,8 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const { VueLoaderPlugin } = require('vue-loader');
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 module.exports = {
-  mode: 'development',
+  mode: isProduction ? 'production' : 'development',
   entry: './src/main_users.js',
 
   output: {
@@ -60,10 +62,7 @@ module.exports = {
       filename: 'usersEntry.js',
       exposes: {
         './UserCard': './src/main_users.js',
-      },
-      remotes: {
-        host: 'host@http://localhost:8080/hostEntry.js'
-      },
+      }
     }),
   ],
   target: 'web'
