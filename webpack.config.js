@@ -61,7 +61,7 @@ module.exports = {
       name: 'userApp',
       filename: 'usersEntry.js',
       exposes: {
-        './UserCard': './src/main_users.js',
+        './UserList': './src/main_users.js',
       }
     }),
   ],

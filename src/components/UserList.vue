@@ -18,7 +18,7 @@
           <td>{{ user.gender || '-' }}</td>
           <td>
             <button class="edit-btn" @click="editUser(user)">
-              Edit
+              {{ $t('users.edit') }}
             </button>
           </td>
         </tr>
@@ -109,8 +109,7 @@ export default {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: background 0.2s;
+  font-size: 14px;
 }
 
 .edit-btn:hover {

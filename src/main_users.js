@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import UserCard from './components/UserCard.vue'
+import UserList from './components/UserList.vue'
 import messages from './i18n/messages'
 
 const injectTranslation = (props) => {
@@ -12,7 +12,7 @@ const injectTranslation = (props) => {
 
 export const mount = (el, props) => {
   injectTranslation(props)
-  const app = createApp(UserCard, props)
+  const app = createApp(UserList, props)
   app.config.globalProperties.$t = props.i18n.t.bind(props.i18n)
   app.mount(el)
 }

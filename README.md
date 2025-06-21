@@ -14,10 +14,9 @@
 ```
 users-app-vue3/
   src/
-    components/      # Vue components (UserCard)
+    components/      # Vue components (UserList)
     main.js          # Entry point for module federation
-    App.vue          # Root component (for standalone dev)
-    i18n/            # (Optional) i18n messages
+    i18n/            # i18n messages
   public/
   webpack.config.js  # Webpack + Module Federation config
   package.json
@@ -47,10 +46,10 @@ users-app-vue3/
    ```
 
 ## Microfrontend Integration
-- Exposes the `UserCard` component via Module Federation in `webpack.config.js`.
+- Exposes the `UserList` component via Module Federation in `webpack.config.js`.
 - Designed to be loaded by a shell/host app.
 - Receives `store` and event bus as props from the host.
 - Communicates with the host using the event bus for edit actions and other events.
 
 ## Usage in Host
-- The host mounts the remote by importing `remoteApp/UserCard` and calling its `mount` function, passing required props.
+- The host mounts the remote by importing `remoteApp/UserList` and calling its `mount` function, passing required props.
